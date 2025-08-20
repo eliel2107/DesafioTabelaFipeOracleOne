@@ -5,7 +5,10 @@ import br.com.alura.tabelafipe.model.Modelos;
 import br.com.alura.tabelafipe.model.Veiculo;
 import br.com.alura.tabelafipe.service.ConsumoAPI;
 import br.com.alura.tabelafipe.service.ConverteDados;
+ codex/annotate-principal-with-@component-and-inject
+
 import org.springframework.beans.factory.annotation.Value;
+ main
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
