@@ -11,11 +11,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Principal {
     private Scanner leitura = new Scanner(System.in);
     private ConsumoAPI consumo = new ConsumoAPI();
     private ConverteDados conversor = new ConverteDados();
+
+    private static final Logger logger = LoggerFactory.getLogger(Principal.class);
 
     private final String URL_BASE = "https://parallelum.com.br/fipe/api/v1/";
 
@@ -42,7 +46,7 @@ public class Principal {
             endereco = URL_BASE + "caminhos/marcas";
         }
         var json = consumo.obterDados(endereco);
-        System.out.println(json);
+        logger.debug(json);
         var marcas = conversor.obterLista(json, Dados.class);
         marcas.stream()
                 .sorted(Comparator.comparing(Dados::codigo))
