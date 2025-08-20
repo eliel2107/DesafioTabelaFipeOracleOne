@@ -13,14 +13,22 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
 public class Principal {
     private ConsumoAPI consumo = new ConsumoAPI();
     private ConverteDados conversor = new ConverteDados();
 
+ codex/add-logging-starter-and-update-principal
+    private static final Logger logger = LoggerFactory.getLogger(Principal.class);
+
+    private final String URL_BASE = "https://parallelum.com.br/fipe/api/v1/";
+
     @Value("${fipe.api.base}")
     private String urlBase;
+ main
 
     public void exibeMenu() {
         try (Scanner leitura = new Scanner(System.in)) {
@@ -106,7 +114,7 @@ codex/add-api-base-property-to-application
  main
         }
         var json = consumo.obterDados(endereco);
-        System.out.println(json);
+        logger.debug(json);
         var marcas = conversor.obterLista(json, Dados.class);
         marcas.stream()
                 .sorted(Comparator.comparing(Dados::codigo))
