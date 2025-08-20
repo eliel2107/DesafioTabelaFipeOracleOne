@@ -5,6 +5,7 @@ import br.com.alura.tabelafipe.model.Modelos;
 import br.com.alura.tabelafipe.model.Veiculo;
 import br.com.alura.tabelafipe.service.ConsumoAPI;
 import br.com.alura.tabelafipe.service.ConverteDados;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+@Component
 public class Principal {
     private Scanner leitura = new Scanner(System.in);
     private ConsumoAPI consumo = new ConsumoAPI();
