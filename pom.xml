@@ -50,13 +50,21 @@
 
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+        <build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.openjfx</groupId>
+                                <artifactId>javafx-maven-plugin</artifactId>
+                                <version>0.0.8</version>
+                                <configuration>
+                                        <mainClass>br.com.alura.tabelafipe.MainApplication</mainClass>
+                                </configuration>
+                        </plugin>
+                        <plugin>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-maven-plugin</artifactId>
+                        </plugin>
+                </plugins>
+        </build>
 
 </project>
