@@ -2,6 +2,7 @@ package br.com.alura.tabelafipe.principal;
 
 import br.com.alura.tabelafipe.model.Dados;
 import br.com.alura.tabelafipe.model.Modelos;
+import br.com.alura.tabelafipe.model.TipoVeiculo;
 import br.com.alura.tabelafipe.model.Veiculo;
 import br.com.alura.tabelafipe.service.ConsumoAPI;
 import br.com.alura.tabelafipe.service.ConverteDados;
@@ -44,6 +45,15 @@ public class Principal {
                 Digite uma das opções para consulta:
                 
                 """;
+codex/create-tipoveiculo-enum-and-update-menu
+        System.out.println(menu);
+        var opcao = leitura.nextLine();
+        TipoVeiculo tipoVeiculo;
+        try {
+            tipoVeiculo = TipoVeiculo.valueOf(opcao.trim().toUpperCase());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Opção inválida");
+            return;
 
             System.out.println(menu);
             var opcao = leitura.nextLine();
@@ -115,7 +125,9 @@ codex/add-api-base-property-to-application
 
             endereco = URL_BASE + "caminhoes/marcas";
  main
+ main
         }
+        String endereco = URL_BASE + tipoVeiculo.getTipo() + "/marcas";
         var json = consumo.obterDados(endereco);
         logger.debug(json);
         var marcas = conversor.obterLista(json, Dados.class);
