@@ -1,5 +1,11 @@
 {
   "name": "frontend",
+ codex/add-ui-library-for-components
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node test/components.test.js"
+
  codex/setup-new-react-project-in-frontend
   "version": "0.0.0",
   "private": true,
@@ -52,6 +58,7 @@
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     }
+main
 main
   }
 }
