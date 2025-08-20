@@ -5,25 +5,27 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.logging.Logger;
 
 public class ConsumoAPI {
+
+    private static final Logger LOGGER = Logger.getLogger(ConsumoAPI.class.getName());
 
     public String obterDados(String endereco) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
                 .build();
-        HttpResponse<String> response = null;
         try {
-            response = client
+            HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            return response.body();
+        } catch (IOException | InterruptedException e) {
+            LOGGER.severe("Error fetching data from API: " + e.getMessage());
+            if (e instanceof InterruptedException) {
+                Thread.currentThread().interrupt();
+            }
+            throw new ApiClientException("Failed to fetch data from API", e);
         }
-
-        String json = response.body();
-        return json;
     }
 }
