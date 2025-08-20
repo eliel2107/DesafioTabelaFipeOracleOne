@@ -32,6 +32,10 @@ build/
 ### VS Code ###
 .vscode/
 
+codex/create-http-request-service-and-components
+# Frontend
+frontend/node_modules/
+
 # Node
 codex/add-ui-library-for-components
 node_modules/
@@ -39,3 +43,4 @@ dist/
 
 frontend/node_modules/
 main
+ main

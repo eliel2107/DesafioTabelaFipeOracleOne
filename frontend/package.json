@@ -1,4 +1,14 @@
 {
+ codex/create-http-request-service-and-components
+  "name": "tabela-fipe-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "dependencies": {}
+
   "name": "frontend",
  codex/add-ui-library-for-components
   "version": "1.0.0",
@@ -61,4 +71,5 @@
 main
 main
   }
+ main
 }
