@@ -39,7 +39,7 @@ public class Principal {
         } else if (opcao.toLowerCase().contains("mot")) {
             endereco = URL_BASE + "motos/marcas";
         } else {
-            endereco = URL_BASE + "caminhos/marcas";
+            endereco = URL_BASE + "caminhoes/marcas";
         }
         var json = consumo.obterDados(endereco);
         System.out.println(json);
