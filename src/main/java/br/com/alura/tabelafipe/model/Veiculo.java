@@ -11,7 +11,4 @@ public record Veiculo(
         @JsonAlias("AnoModelo") Integer ano,
         @JsonAlias("Combustível") String tipoCombustivel
 ) {
-    public void add(Veiculo veiculo) {
-
-    }
 }

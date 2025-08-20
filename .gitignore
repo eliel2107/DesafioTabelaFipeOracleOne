@@ -33,5 +33,9 @@ build/
 .vscode/
 
 # Node
+codex/add-ui-library-for-components
 node_modules/
 dist/
+
+frontend/node_modules/
+main
