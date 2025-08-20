@@ -1,3 +1,4 @@
+codex/setup-new-react-project-in-frontend
 # DesafioTabelaFipeOracleOne
 
 ## Frontend
@@ -23,3 +24,17 @@ npm run dev
 npm run lint
 npm run format
 ```
+
+# Tabela Fipe
+
+Projeto de consulta à Tabela Fipe.
+
+## Executar GUI
+
+Para iniciar a interface gráfica, utilize o comando:
+
+```bash
+mvn javafx:run
+```
+
+ main
