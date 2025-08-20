@@ -5,6 +5,8 @@ import br.com.alura.tabelafipe.model.Modelos;
 import br.com.alura.tabelafipe.model.Veiculo;
 import br.com.alura.tabelafipe.service.ConsumoAPI;
 import br.com.alura.tabelafipe.service.ConverteDados;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -12,12 +14,14 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+@Component
 public class Principal {
     private Scanner leitura = new Scanner(System.in);
     private ConsumoAPI consumo = new ConsumoAPI();
     private ConverteDados conversor = new ConverteDados();
 
-    private final String URL_BASE = "https://parallelum.com.br/fipe/api/v1/";
+    @Value("${fipe.api.base}")
+    private String urlBase;
 
     public void exibeMenu() {
         var menu = """
@@ -35,11 +39,11 @@ public class Principal {
         String endereco;
 
         if (opcao.toLowerCase().contains("carr")) {
-            endereco = URL_BASE + "carros/marcas";
+            endereco = urlBase + "carros/marcas";
         } else if (opcao.toLowerCase().contains("mot")) {
-            endereco = URL_BASE + "motos/marcas";
+            endereco = urlBase + "motos/marcas";
         } else {
-            endereco = URL_BASE + "caminhos/marcas";
+            endereco = urlBase + "caminhos/marcas";
         }
         var json = consumo.obterDados(endereco);
         System.out.println(json);
