@@ -43,7 +43,11 @@ public class Principal {
         } else if (opcao.toLowerCase().contains("mot")) {
             endereco = urlBase + "motos/marcas";
         } else {
+codex/add-api-base-property-to-application
             endereco = urlBase + "caminhos/marcas";
+
+            endereco = URL_BASE + "caminhoes/marcas";
+ main
         }
         var json = consumo.obterDados(endereco);
         System.out.println(json);
@@ -52,7 +56,7 @@ public class Principal {
                 .sorted(Comparator.comparing(Dados::codigo))
                 .forEach(System.out::println);
 
-        System.out.println("Informe o código de consulta da marca para consulta: ");
+        System.out.println("Informe o código da marca para consulta: ");
         var codigoMarca = leitura.nextLine();
 
         endereco = endereco + "/" + codigoMarca + "/modelos";
