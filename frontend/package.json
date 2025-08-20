@@ -1,0 +1,10 @@
+{
+  "name": "tabela-fipe-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "dependencies": {}
+}
