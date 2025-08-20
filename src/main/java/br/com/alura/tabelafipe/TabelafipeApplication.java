@@ -16,6 +16,14 @@ public class TabelafipeApplication implements CommandLineRunner {
         public static void main(String[] args) {
                 SpringApplication.run(TabelafipeApplication.class, args);
         }
+ codex/annotate-principal-with-@component-and-inject
+
+
+        @Override
+        public void run(String... args) {
+                principal.exibeMenu();
+        }
+ main
 
         @Override
         public void run(String... args) {
